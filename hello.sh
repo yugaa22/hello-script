@@ -1,3 +1,3 @@
 #!/bin/bash
  
-echo "Welcome to OpsMx World!"
+echo "Welcome to OpsMx Slack World!"
