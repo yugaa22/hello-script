@@ -6,7 +6,7 @@ on:
     types: 
       - closed
     branches:
-      - yugaa22-patch-1
+      - master
 
 jobs:
   Explore-GitHub-Actions:
