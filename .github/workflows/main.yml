@@ -20,4 +20,7 @@ jobs:
           touch testingcommits
           echo "hiii"
           ls ${{ github.workspace }}  
+          git add .
+          git commit -m "testing files"
+          git push
       - run: echo "🍏 This job's status is ${{ job.status }}."
