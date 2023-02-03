@@ -3,9 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions
 
 on:
   pull_request:
-    types: [closed]
-    branches:
-      - master
+    types: 
+      - closed
 
 jobs:
   Explore-GitHub-Actions:
