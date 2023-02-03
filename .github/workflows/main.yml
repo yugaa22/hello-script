@@ -1,9 +1,16 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions
-on: [push]
+
+on:
+  pull_request:
+    types: 
+      - closed
+    branches:
+      - yugaa22-patch-1
+
 jobs:
   Explore-GitHub-Actions:
-    if: github.event.pull_request.merged == 'true'
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -18,12 +25,12 @@ jobs:
         run: |
           ls ${{ github.workspace }} 
           cd /home/runner/work/hello-script/hello-script
-          touch testingcommits
-          echo "hiii"
-          ls ${{ github.workspace }}  
+          touch Dev_commits
+          #ls ${{ github.workspace }}  
           git config --global user.email "yugaa22@gmail.com"
           git config --global user.name "yugaa22"
+          git log -1 | grep commit >> Dev_commits
           git add .
-          git commit -m "testing files"
+          git commit -m "Developper_commits"
           git push
       - run: echo "🍏 This job's status is ${{ job.status }}."
