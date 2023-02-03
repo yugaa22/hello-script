@@ -15,6 +15,8 @@ jobs:
       - run : git log -1
       - name: List files in the repository
         run: |
-          export des=$(ls ${{ github.workspace }} | grep "hello")
-          cat $des
+          ls ${{ github.workspace }}
+          touch commitslist 
+          ls ${{ github.workspace }}
+          git log -1 | grep “commit”  
       - run: echo "🍏 This job's status is ${{ job.status }}."
