@@ -15,4 +15,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+          curl -X POST -vvv -H "Content-type: application/json" -d '{ }' https://isd.alpha.autopilot.opsmx.com/gate/webhooks/webhook/test1
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
