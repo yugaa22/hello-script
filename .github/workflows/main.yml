@@ -18,6 +18,10 @@ jobs:
           ls ${{ github.workspace }}
           echo "secret is:  $SUPER_SECRET"
           #curl -X POST -vvv -H "Content-type: application/json" -d '{ }' https://isd.alpha.autopilot.opsmx.com/gate/webhooks/webhook/test1
+      - name: secret test 
         env:
           SUPER_SECRET: ${{ secrets.USERNAME }}
+        run: |
+          echo $USERNAME 
+        
       - run: echo "🍏 This job's status is ${{ job.status }}."
