@@ -15,8 +15,5 @@ jobs:
       - run : git log -1
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
-          touch commitslist 
-          ls ${{ github.workspace }}
-          git log -1 | grep “commit”  
+          ls ${{ github.workspace }} 
       - run: echo "🍏 This job's status is ${{ job.status }}."
