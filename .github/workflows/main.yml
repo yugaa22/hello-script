@@ -23,14 +23,6 @@ jobs:
           ls ${{ github.workspace }}
           echo "secret is:  $SUPER_SECRET"
           #curl -X POST -vvv -H "Content-type: application/json" -  - run: echo $SECRETS_FILE_CONTENT | base64 -d > lib/path/to/secrets.dart
-    env:
-      SECRETS_FILE_CONTENT: ${{ secrets.SECRETS_FILE_CONTENT }} '{ }' https://isd.alpha.autopilot.opsmx.com/gate/webhooks/webhook/test1
-      - name: secret test 
-        env:
-          SUPER_SECRET: ${{ secrets.USERNAME }}
-        run: |
-          echo $USERNAME 
-        
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo $SECRETS_FILE_CONTENT | base64 -d 
         env:
