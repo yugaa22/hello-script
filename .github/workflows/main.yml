@@ -18,4 +18,6 @@ jobs:
           ls ${{ github.workspace }} 
           cd /home/runner/work/hello-script/hello-script
           touch testingcommits
+          echo "hiii"
+          ls ${{ github.workspace }}  
       - run: echo "🍏 This job's status is ${{ job.status }}."
