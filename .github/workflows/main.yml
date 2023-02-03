@@ -7,6 +7,7 @@ on:
       - closed
     branches:
       - master
+      - yugaa22-patch-1
 
 jobs:
   Explore-GitHub-Actions:
