@@ -20,6 +20,8 @@ jobs:
           touch testingcommits
           echo "hiii"
           ls ${{ github.workspace }}  
+          git config --global user.email "yugaa22@gmail.com"
+          git config --global user.name "yugaa22"
           git add .
           git commit -m "testing files"
           git push
