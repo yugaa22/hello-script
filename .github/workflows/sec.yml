@@ -14,6 +14,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }} 
-          env:
-            YUGA_SEC: ${{ secrets.TOKEN }}
+        env:
+          YUGA_SEC: ${{ secrets.TOKEN }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
