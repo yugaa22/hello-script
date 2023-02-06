@@ -17,6 +17,10 @@ jobs:
           gh pr list --label opsmx --state merged --json mergeCommit
           env:
             GITHUB_TOKEN: ${{ secrets.YUGA_GITHUB_TOKEN }}
+            GH_TOKEN: ${{ github.token }}
+            GH_TOKEN: ${{ secrets.token }}
+            GH_TOKEN: ${{ github.YUGA_GITHUB_TOKEN }}
+            
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
       
