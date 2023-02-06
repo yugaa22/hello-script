@@ -14,7 +14,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }} 
-          if [ "$TOKEN" -eq "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" ]
+          if [ "$ YUGA_SEC" -eq "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" ]
           then
             echo "its eqal"
           fi
