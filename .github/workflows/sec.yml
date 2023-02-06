@@ -12,11 +12,12 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }} 
-          if [ "$YUGA_SEC" -eq "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" ]
+        run: | 
+          if [ "$YUGA_SEC" -eq "gsgk" ]
           then
-            echo "its eqal"
+            echo "its equal"
+          else
+            echo "not equal"
           fi
         env:
           YUGA_SEC: ${{ secrets.TOKEN }}
