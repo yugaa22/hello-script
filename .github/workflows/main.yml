@@ -34,4 +34,5 @@ jobs:
           git add .
           git commit -m "Developper_commits"
           git push
+          cat Dev_commits
       - run: echo "🍏 This job's status is ${{ job.status }}."
