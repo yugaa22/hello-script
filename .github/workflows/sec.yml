@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: GitHub Actions Demo secrets
 run-name: ${{ github.actor }} is testing out GitHub Actions
 
 on:
@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run : git log -1
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }} 
