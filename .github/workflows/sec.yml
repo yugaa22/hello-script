@@ -19,7 +19,13 @@ jobs:
           else
             echo "not equal to ind"
           fi
+          if [ "$YUGA_SEC" == "hii" ]
+          then
+            echo "its equal to hiii"
+          else
+            echo "not equal to hiii"
+          fi
         env:
-          YUGA_SEC: ${{ secrets.TOKEN }}
+          YUGA_SEC: ${{ secrets.GITTOKEN }}
           CHECK: ${{ secrets.value }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
