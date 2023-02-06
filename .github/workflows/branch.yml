@@ -1,0 +1,37 @@
+name: "Create Code"
+
+
+on:
+  create:
+    branches:
+      - '*'
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: List files in the repository
+        run: |
+          export GITHUB_TOKEN=""
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+
+          gh pr list  -l opsmx --state merged --json mergeCommit | jq -r .[].mergeCommit.oid 
+          touch commits
+          gh pr list  -l opsmx --state merged --json mergeCommit | jq -r .[].mergeCommit.oid  >> commits  
+          cat commits
+          git branch
+          for com in $(cat commits) ; do git cherry-pick -m 1 $com; done
+          
+          git rm commits
+
+          #for com in $(gh pr list  -l opsmx --state merged --json mergeCommit | jq -r .[].mergeCommit.oid) ; do git cherry-pick -m 1 $com; done
+        env:
+           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      
