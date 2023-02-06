@@ -13,7 +13,7 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: List files in the repository
         run: | 
-          if [ ${YUGA_SEC} -eq 'gsgk' ]
+          if [ "${YUGA_SEC}" == "gsgk" ]
           then
             echo "its equal"
           else
