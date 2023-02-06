@@ -15,6 +15,8 @@ jobs:
         run: |
           ls ${{ github.workspace }} 
           gh pr list --label opsmx --state merged --json mergeCommit
+          env:
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}
         
       - run: echo "🍏 This job's status is ${{ job.status }}."
       
