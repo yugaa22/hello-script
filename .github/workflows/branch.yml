@@ -24,7 +24,7 @@ jobs:
           gh pr list  -l opsmx --state merged --json mergeCommit | jq -r .[].mergeCommit.oid  >> commits  
           cat commits
           git branch
-          for com in $(cat commits) ; do git cherry-pick -m 1 $com; done
+          for com in $(cat commits) ; do git cherry-pick $com; done
           
           git rm commits
 
