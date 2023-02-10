@@ -11,6 +11,8 @@ jobs:
   sync_with_upstream:
     runs-on: ubuntu-latest
     name: Sync HEAD with upstream latest
+    
+    
 
     steps:
     # Step 1: run a standard checkout action, provided by github
@@ -21,10 +23,18 @@ jobs:
 
     # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
     - name: Pull upstream changes
-      id: sync
-      uses: bdougie/Fork-Sync-With-Upstream-action@fork
-      with:
-        upstream_repository: abhinaybyrisetty/hello-script
-        upstream_branch: master
-        target_branch: master                   # optional
-        github_token: ${{ secrets.YUGA_GITHUB_TOKEN}} 
+      run: |
+          git branch
+              git remote add upstream https://github.com/abhinaybyrisetty/hello-script.git
+
+              # Fetch all the branches of that remote into remote-tracking branches
+
+               git fetch upstream
+
+             # Make sure that you're on your master branch:
+
+              git checkout master
+
+
+             git rebase upstream/master
+    - run: echo "🍏 This job's status is ${{ job.status }}."
