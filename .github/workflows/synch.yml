@@ -27,3 +27,4 @@ jobs:
         upstream_repository: abhinaybyrisetty/hello-script
         upstream_branch: master
         target_branch: master                   # optional
+        github_token: ${{ secrets.YUGA_GITHUB_TOKEN}} 
